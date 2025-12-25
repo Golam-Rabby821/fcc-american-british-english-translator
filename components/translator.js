@@ -89,7 +89,7 @@ class Translator {
     const entries = Object.entries(titlesMap);
 
     for (const [from, to] of entries) {
-      const regex = new RegExp(`\\b${escapeRegex(from)}\\b`, "gi");
+      const regex = new RegExp(`\\b${escapeRegex(from)}(?=\\s|$)`, "gi");
       translated = translated.replace(regex, (match) => {
         changed = true;
         return highlight(preserveCase(match, to));
