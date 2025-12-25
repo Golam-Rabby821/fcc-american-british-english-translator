@@ -23,7 +23,6 @@ module.exports = function (app) {
       }
 
       const translation = translator.translate(text, locale);
-      console.log("Translation: ", translation)
 
       return res.send({ text, translation });
     });
